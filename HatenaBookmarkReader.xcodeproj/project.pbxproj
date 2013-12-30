@@ -472,6 +472,7 @@
 				8C055842186FF72400078B00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C055843186FF72400078B00 /* Build configuration list for PBXNativeTarget "HatenaBookmarkReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +481,7 @@
 				8C055845186FF72400078B00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

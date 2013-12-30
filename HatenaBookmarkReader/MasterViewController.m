@@ -37,11 +37,11 @@
 
 - (void)setupItems
 {
-    NSDictionary *cell110 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"http://example.com", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
-    NSDictionary *cell111 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"http://example.com", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
-    NSDictionary *cell112 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"http://example.com", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
-    NSDictionary *cell113 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"http://example.com", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
-    NSDictionary *cell114 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"http://example.com", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
+    NSDictionary *cell110 = @{@"title":@"ここに記事タイトル\n二行目", @"url":@"http://example.com", @"icon":@"i", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
+    NSDictionary *cell111 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"i", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
+    NSDictionary *cell112 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"i", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
+    NSDictionary *cell113 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"i", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
+    NSDictionary *cell114 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"i", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
     
     NSDictionary *section = @{@"header":@"articles", @"data":@[cell110, cell111, cell112, cell113, cell114]};
     
@@ -95,7 +95,8 @@
 // tableViewのセルの高さを返すデリゲートメソッド
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 83;
+    //TODO 最下段だけ2px増やすように
+    return 100;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -128,6 +129,21 @@
         cell = [[[ArticleListCustomCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"table_cell"]init];
     }
     NSDictionary *myData = theData[indexPath.row];
+    
+//    _icon = [self makeLabel: 10 y:5 width:20 height:20];
+//    _users = [self makeLabel:200 y:60 width:50 height:10];
+//    _date = [self makeLabel:10 y:80 width:50 height:10];
+//    _tags = [self makeLabel:200 y:60 width:50 height:10];
+//    _title = [self makeLabel: 20 y:5 width:280 height:50];
+    
+//    NSDictionary *cell110 = @{@"title":@"ここに記事タイトル", @"url":@"http://example.com", @"icon":@"http://example.com", @"usersCount":@"1", @"postDate":@"2013", @"tags":@[@"ruby", @"security"]};
+    
+    [cell.icon setText:myData[@"icon"]];
+    [cell.users setText:myData[@"usersCount"]];
+    [cell.date setText:myData[@"postDate"]];
+    NSString *tagFirst = myData[@"tags"][0];
+    NSLog(@"tagFirst = %@", tagFirst);
+    [cell.tags setText:tagFirst];
     [cell.title setText:myData[@"title"]];
 
     return cell;
