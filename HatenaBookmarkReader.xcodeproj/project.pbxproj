@@ -22,6 +22,7 @@
 		8C055833186FF72400078B00 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C055812186FF72300078B00 /* UIKit.framework */; };
 		8C05583B186FF72400078B00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C055839186FF72400078B00 /* InfoPlist.strings */; };
 		8C05583D186FF72400078B00 /* HatenaBookmarkReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C05583C186FF72400078B00 /* HatenaBookmarkReaderTests.m */; };
+		8C05584B18701CDD00078B00 /* ArticleListCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		8C055838186FF72400078B00 /* HatenaBookmarkReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HatenaBookmarkReaderTests-Info.plist"; sourceTree = "<group>"; };
 		8C05583A186FF72400078B00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C05583C186FF72400078B00 /* HatenaBookmarkReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HatenaBookmarkReaderTests.m; sourceTree = "<group>"; };
+		8C05584918701CDD00078B00 /* ArticleListCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListCustomCell.h; sourceTree = "<group>"; };
+		8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListCustomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				8C055827186FF72400078B00 /* DetailViewController.m */,
 				8C055829186FF72400078B00 /* Images.xcassets */,
 				8C055815186FF72300078B00 /* Supporting Files */,
+				8C05584918701CDD00078B00 /* ArticleListCustomCell.h */,
+				8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */,
 			);
 			path = HatenaBookmarkReader;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			files = (
 				8C05581F186FF72300078B00 /* AppDelegate.m in Sources */,
 				8C055825186FF72300078B00 /* MasterViewController.m in Sources */,
+				8C05584B18701CDD00078B00 /* ArticleListCustomCell.m in Sources */,
 				8C05581B186FF72300078B00 /* main.m in Sources */,
 				8C055828186FF72400078B00 /* DetailViewController.m in Sources */,
 			);

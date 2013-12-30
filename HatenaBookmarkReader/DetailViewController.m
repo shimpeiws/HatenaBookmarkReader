@@ -31,7 +31,9 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        NSURL *url = [NSURL URLWithString:_detailItem];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        [_myWebView loadRequest:urlRequest];
     }
 }
 
