@@ -1,0 +1,20 @@
+{
+     "folders":
+     [
+          {
+               "path": "../HatenaBookmarkReader/Classes"
+          },
+          {
+               "path": "../HatenaBookmarkReader/libs"
+          }
+     ],
+ 
+     "build_systems":
+     [
+          {
+               "name": "iOS Device Build & Run",
+ 
+               "cmd": ["./sublimebuild.sh"]
+          }
+     ]
+}

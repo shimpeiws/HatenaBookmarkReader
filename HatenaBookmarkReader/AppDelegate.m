@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "IIViewDeckController.h"
 
 @implementation AppDelegate
 

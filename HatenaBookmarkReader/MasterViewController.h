@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MasterViewController : UITableViewController
+#import "HatenaBookmarkUtil.h"
+//@protocol HatenaBookmarkUtilDelegate
+//@required //requiredが指定されてると必ず実装する必要がある
+//- (void)finishLoading:(id)sender;
+//@end
+@interface MasterViewController : UITableViewController <HatenaBookmarkUtilDelegate>
 
 @end

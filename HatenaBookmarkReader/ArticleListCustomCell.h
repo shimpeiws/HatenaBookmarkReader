@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ArticleListCustomCell : UITableViewCell
-@property UILabel *icon;
+@property UIImageView *favicon;
 @property UILabel *title;
 @property UILabel *users;
 @property UILabel *date;

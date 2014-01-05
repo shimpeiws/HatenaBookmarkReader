@@ -23,6 +23,17 @@
 		8C05583B186FF72400078B00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C055839186FF72400078B00 /* InfoPlist.strings */; };
 		8C05583D186FF72400078B00 /* HatenaBookmarkReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C05583C186FF72400078B00 /* HatenaBookmarkReaderTests.m */; };
 		8C05584B18701CDD00078B00 /* ArticleListCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */; };
+		8C22534818765737004B54B8 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22533B18765737004B54B8 /* DDXMLElementAdditions.m */; };
+		8C22534918765737004B54B8 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22533E18765737004B54B8 /* NSString+DDXML.m */; };
+		8C22534A18765737004B54B8 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22534118765737004B54B8 /* DDXMLDocument.m */; };
+		8C22534B18765737004B54B8 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22534318765737004B54B8 /* DDXMLElement.m */; };
+		8C22534C18765737004B54B8 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22534518765737004B54B8 /* DDXMLNode.m */; };
+		8C622A1B1871CF4900CB7572 /* HatenaBookmarkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C622A1A1871CF4900CB7572 /* HatenaBookmarkUtil.m */; };
+		8C622A1E1871E49400CB7572 /* HatenaBookmarkEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C622A1D1871E49400CB7572 /* HatenaBookmarkEntry.m */; };
+		8CCCB4571879449400482A20 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCCB4561879449400482A20 /* QuartzCore.framework */; };
+		8CCCB45C187945A900482A20 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCB459187945A900482A20 /* IIViewDeckController.m */; };
+		8CCCB45D187945A900482A20 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCB45B187945A900482A20 /* IIWrapController.m */; };
+		8CCCB46318794D4C00482A20 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCB46218794D4C00482A20 /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +70,29 @@
 		8C05583C186FF72400078B00 /* HatenaBookmarkReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HatenaBookmarkReaderTests.m; sourceTree = "<group>"; };
 		8C05584918701CDD00078B00 /* ArticleListCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListCustomCell.h; sourceTree = "<group>"; };
 		8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListCustomCell.m; sourceTree = "<group>"; };
+		8C22533A18765737004B54B8 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		8C22533B18765737004B54B8 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		8C22533D18765737004B54B8 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
+		8C22533E18765737004B54B8 /* NSString+DDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDXML.m"; sourceTree = "<group>"; };
+		8C22533F18765737004B54B8 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		8C22534018765737004B54B8 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		8C22534118765737004B54B8 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		8C22534218765737004B54B8 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		8C22534318765737004B54B8 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		8C22534418765737004B54B8 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		8C22534518765737004B54B8 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		8C22534718765737004B54B8 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
+		8C622A191871CF4900CB7572 /* HatenaBookmarkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HatenaBookmarkUtil.h; sourceTree = "<group>"; };
+		8C622A1A1871CF4900CB7572 /* HatenaBookmarkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HatenaBookmarkUtil.m; sourceTree = "<group>"; };
+		8C622A1C1871E49400CB7572 /* HatenaBookmarkEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HatenaBookmarkEntry.h; sourceTree = "<group>"; };
+		8C622A1D1871E49400CB7572 /* HatenaBookmarkEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HatenaBookmarkEntry.m; sourceTree = "<group>"; };
+		8CCCB4561879449400482A20 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8CCCB458187945A900482A20 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = "../ViewDeck-master/ViewDeck-master/ViewDeck/IIViewDeckController.h"; sourceTree = "<group>"; };
+		8CCCB459187945A900482A20 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = "../ViewDeck-master/ViewDeck-master/ViewDeck/IIViewDeckController.m"; sourceTree = "<group>"; };
+		8CCCB45A187945A900482A20 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = "../ViewDeck-master/ViewDeck-master/ViewDeck/IIWrapController.h"; sourceTree = "<group>"; };
+		8CCCB45B187945A900482A20 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = "../ViewDeck-master/ViewDeck-master/ViewDeck/IIWrapController.m"; sourceTree = "<group>"; };
+		8CCCB46118794D4C00482A20 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		8CCCB46218794D4C00482A20 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCCB4571879449400482A20 /* QuartzCore.framework in Frameworks */,
 				8C055811186FF72300078B00 /* CoreGraphics.framework in Frameworks */,
 				8C055813186FF72300078B00 /* UIKit.framework in Frameworks */,
 				8C05580F186FF72300078B00 /* Foundation.framework in Frameworks */,
@@ -88,6 +123,8 @@
 		8C055802186FF72300078B00 = {
 			isa = PBXGroup;
 			children = (
+				8CCCB4551879420900482A20 /* ViewDeck */,
+				8C22533818765737004B54B8 /* KissXML */,
 				8C055814186FF72300078B00 /* HatenaBookmarkReader */,
 				8C055836186FF72400078B00 /* HatenaBookmarkReaderTests */,
 				8C05580D186FF72300078B00 /* Frameworks */,
@@ -107,6 +144,7 @@
 		8C05580D186FF72300078B00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CCCB4561879449400482A20 /* QuartzCore.framework */,
 				8C05580E186FF72300078B00 /* Foundation.framework */,
 				8C055810186FF72300078B00 /* CoreGraphics.framework */,
 				8C055812186FF72300078B00 /* UIKit.framework */,
@@ -118,6 +156,7 @@
 		8C055814186FF72300078B00 /* HatenaBookmarkReader */ = {
 			isa = PBXGroup;
 			children = (
+				8C622A181871CF1D00CB7572 /* HatenaBookmarkUtil */,
 				8C05581D186FF72300078B00 /* AppDelegate.h */,
 				8C05581E186FF72300078B00 /* AppDelegate.m */,
 				8C055820186FF72300078B00 /* Main.storyboard */,
@@ -129,6 +168,8 @@
 				8C055815186FF72300078B00 /* Supporting Files */,
 				8C05584918701CDD00078B00 /* ArticleListCustomCell.h */,
 				8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */,
+				8CCCB46118794D4C00482A20 /* MenuViewController.h */,
+				8CCCB46218794D4C00482A20 /* MenuViewController.m */,
 			);
 			path = HatenaBookmarkReader;
 			sourceTree = "<group>";
@@ -160,6 +201,72 @@
 				8C055839186FF72400078B00 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C22533818765737004B54B8 /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				8C22533918765737004B54B8 /* Additions */,
+				8C22533C18765737004B54B8 /* Categories */,
+				8C22533F18765737004B54B8 /* DDXML.h */,
+				8C22534018765737004B54B8 /* DDXMLDocument.h */,
+				8C22534118765737004B54B8 /* DDXMLDocument.m */,
+				8C22534218765737004B54B8 /* DDXMLElement.h */,
+				8C22534318765737004B54B8 /* DDXMLElement.m */,
+				8C22534418765737004B54B8 /* DDXMLNode.h */,
+				8C22534518765737004B54B8 /* DDXMLNode.m */,
+				8C22534618765737004B54B8 /* Private */,
+			);
+			name = KissXML;
+			path = HatenaBookmarkReader/KissXML;
+			sourceTree = "<group>";
+		};
+		8C22533918765737004B54B8 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				8C22533A18765737004B54B8 /* DDXMLElementAdditions.h */,
+				8C22533B18765737004B54B8 /* DDXMLElementAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		8C22533C18765737004B54B8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8C22533D18765737004B54B8 /* NSString+DDXML.h */,
+				8C22533E18765737004B54B8 /* NSString+DDXML.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		8C22534618765737004B54B8 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				8C22534718765737004B54B8 /* DDXMLPrivate.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		8C622A181871CF1D00CB7572 /* HatenaBookmarkUtil */ = {
+			isa = PBXGroup;
+			children = (
+				8C622A191871CF4900CB7572 /* HatenaBookmarkUtil.h */,
+				8C622A1A1871CF4900CB7572 /* HatenaBookmarkUtil.m */,
+				8C622A1C1871E49400CB7572 /* HatenaBookmarkEntry.h */,
+				8C622A1D1871E49400CB7572 /* HatenaBookmarkEntry.m */,
+			);
+			name = HatenaBookmarkUtil;
+			sourceTree = "<group>";
+		};
+		8CCCB4551879420900482A20 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				8CCCB458187945A900482A20 /* IIViewDeckController.h */,
+				8CCCB459187945A900482A20 /* IIViewDeckController.m */,
+				8CCCB45A187945A900482A20 /* IIWrapController.h */,
+				8CCCB45B187945A900482A20 /* IIWrapController.m */,
+			);
+			name = ViewDeck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +368,18 @@
 			files = (
 				8C05581F186FF72300078B00 /* AppDelegate.m in Sources */,
 				8C055825186FF72300078B00 /* MasterViewController.m in Sources */,
+				8C622A1B1871CF4900CB7572 /* HatenaBookmarkUtil.m in Sources */,
+				8CCCB45C187945A900482A20 /* IIViewDeckController.m in Sources */,
+				8CCCB46318794D4C00482A20 /* MenuViewController.m in Sources */,
+				8C22534B18765737004B54B8 /* DDXMLElement.m in Sources */,
+				8C22534918765737004B54B8 /* NSString+DDXML.m in Sources */,
 				8C05584B18701CDD00078B00 /* ArticleListCustomCell.m in Sources */,
+				8C22534818765737004B54B8 /* DDXMLElementAdditions.m in Sources */,
+				8C22534A18765737004B54B8 /* DDXMLDocument.m in Sources */,
+				8CCCB45D187945A900482A20 /* IIWrapController.m in Sources */,
 				8C05581B186FF72300078B00 /* main.m in Sources */,
+				8C22534C18765737004B54B8 /* DDXMLNode.m in Sources */,
+				8C622A1E1871E49400CB7572 /* HatenaBookmarkEntry.m in Sources */,
 				8C055828186FF72400078B00 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,7 +509,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HatenaBookmarkReader/HatenaBookmarkReader-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "HatenaBookmarkReader/HatenaBookmarkReader-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,7 +529,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HatenaBookmarkReader/HatenaBookmarkReader-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "HatenaBookmarkReader/HatenaBookmarkReader-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
