@@ -8,15 +8,36 @@
 
 #import "AppDelegate.h"
 #import "IIViewDeckController.h"
+#import "MenuViewController.h"
+#import "MasterViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+//    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [self generateControllerStack];
+    [self.window makeKeyAndVisible];
     return YES;
 }
-							
+
+- (IIViewDeckController*) generateControllerStack
+{
+    UIStoryboard *mystoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MenuViewController *leftController = [mystoryboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
+    leftController = [[UINavigationController alloc] initWithRootViewController:leftController];
+    
+    MasterViewController *centerController = [mystoryboard instantiateViewControllerWithIdentifier:@"MasterViewController"];
+    centerController = [[UINavigationController alloc] initWithRootViewController:centerController];
+    
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:centerController leftViewController:leftController                                                                               rightViewController:nil];
+    deckController.rightSize = 100;
+    
+    [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
+    return deckController;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

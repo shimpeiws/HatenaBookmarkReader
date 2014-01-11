@@ -68,9 +68,9 @@
 
 - (void)setupTableViewStyle
 {
-    MenuViewController* leftController = [[MenuViewController alloc] init];
-    self.viewDeckController.leftController = leftController;
-    [self.viewDeckController toggleLeftViewAnimated:YES];
+//    MenuViewController* leftController = [[MenuViewController alloc] init];
+//    self.viewDeckController.leftController = leftController;
+//    [self.viewDeckController toggleLeftViewAnimated:YES];
     //IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self leftViewController:leftController];
 //    UIWindow *window = [UIApplication sharedApplication].keyWindow;
 //   if (window == nil) {
@@ -88,9 +88,21 @@
 
 - (void)setupNavigationItem
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"MENU" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
+//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *btn =
+    [[UIBarButtonItem alloc]
+     initWithTitle:@"button"  // ボタンタイトル名を指定
+     style:UIBarButtonItemStylePlain  // スタイルを指定（※下記表参照）
+     target:self  // デリゲートのターゲットを指定
+     action:@selector(showMenu)  // ボタンが押されたときに呼ばれるメソッドを指定
+     ];
+    self.navigationItem.leftBarButtonItem = btn;
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"MENU" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
     self.navigationItem.title = @"IT";
     self.navigationItem.titleView.backgroundColor = [UIColor colorWithRed:0.30 green:0.70 blue:0.00 alpha:0.1];
+}
+- (IBAction)showMenu {
+    [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

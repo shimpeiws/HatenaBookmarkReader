@@ -23,6 +23,7 @@
 		8C05583B186FF72400078B00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C055839186FF72400078B00 /* InfoPlist.strings */; };
 		8C05583D186FF72400078B00 /* HatenaBookmarkReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C05583C186FF72400078B00 /* HatenaBookmarkReaderTests.m */; };
 		8C05584B18701CDD00078B00 /* ArticleListCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */; };
+		8C06AA3F187B67EE00B158CA /* PreparingMssterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C06AA3E187B67EE00B158CA /* PreparingMssterViewController.m */; };
 		8C22534818765737004B54B8 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22533B18765737004B54B8 /* DDXMLElementAdditions.m */; };
 		8C22534918765737004B54B8 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22533E18765737004B54B8 /* NSString+DDXML.m */; };
 		8C22534A18765737004B54B8 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22534118765737004B54B8 /* DDXMLDocument.m */; };
@@ -70,6 +71,8 @@
 		8C05583C186FF72400078B00 /* HatenaBookmarkReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HatenaBookmarkReaderTests.m; sourceTree = "<group>"; };
 		8C05584918701CDD00078B00 /* ArticleListCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListCustomCell.h; sourceTree = "<group>"; };
 		8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListCustomCell.m; sourceTree = "<group>"; };
+		8C06AA3D187B67EE00B158CA /* PreparingMssterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparingMssterViewController.h; sourceTree = "<group>"; };
+		8C06AA3E187B67EE00B158CA /* PreparingMssterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreparingMssterViewController.m; sourceTree = "<group>"; };
 		8C22533A18765737004B54B8 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
 		8C22533B18765737004B54B8 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
 		8C22533D18765737004B54B8 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				8C05584A18701CDD00078B00 /* ArticleListCustomCell.m */,
 				8CCCB46118794D4C00482A20 /* MenuViewController.h */,
 				8CCCB46218794D4C00482A20 /* MenuViewController.m */,
+				8C06AA3D187B67EE00B158CA /* PreparingMssterViewController.h */,
+				8C06AA3E187B67EE00B158CA /* PreparingMssterViewController.m */,
 			);
 			path = HatenaBookmarkReader;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 				8C22534C18765737004B54B8 /* DDXMLNode.m in Sources */,
 				8C622A1E1871E49400CB7572 /* HatenaBookmarkEntry.m in Sources */,
 				8C055828186FF72400078B00 /* DetailViewController.m in Sources */,
+				8C06AA3F187B67EE00B158CA /* PreparingMssterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
