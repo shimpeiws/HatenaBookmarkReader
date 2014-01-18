@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "IIViewDeckController.h"
+#import "MenuButton.h"
 
 @interface MenuViewController ()
 
@@ -28,6 +29,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self setupNabigationBar];
+    [self setupMenu];
+}
+
+- (void)setupNabigationBar
+{
+    UINavigationController *navigationController = self.navigationController;
+    navigationController.navigationBarHidden = YES;
+}
+
+- (void)setupMenu {
+    MenuButton *menuButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:1 labelString:@"world"];
+    [self.view addSubview:menuButton];
 }
 
 - (void)didReceiveMemoryWarning

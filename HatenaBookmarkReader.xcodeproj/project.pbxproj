@@ -31,6 +31,7 @@
 		8C22534C18765737004B54B8 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22534518765737004B54B8 /* DDXMLNode.m */; };
 		8C622A1B1871CF4900CB7572 /* HatenaBookmarkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C622A1A1871CF4900CB7572 /* HatenaBookmarkUtil.m */; };
 		8C622A1E1871E49400CB7572 /* HatenaBookmarkEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C622A1D1871E49400CB7572 /* HatenaBookmarkEntry.m */; };
+		8C891D54188A448C00939EC2 /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C891D53188A448C00939EC2 /* MenuButton.m */; };
 		8CCCB4571879449400482A20 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCCB4561879449400482A20 /* QuartzCore.framework */; };
 		8CCCB45C187945A900482A20 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCB459187945A900482A20 /* IIViewDeckController.m */; };
 		8CCCB45D187945A900482A20 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCB45B187945A900482A20 /* IIWrapController.m */; };
@@ -89,6 +90,8 @@
 		8C622A1A1871CF4900CB7572 /* HatenaBookmarkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HatenaBookmarkUtil.m; sourceTree = "<group>"; };
 		8C622A1C1871E49400CB7572 /* HatenaBookmarkEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HatenaBookmarkEntry.h; sourceTree = "<group>"; };
 		8C622A1D1871E49400CB7572 /* HatenaBookmarkEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HatenaBookmarkEntry.m; sourceTree = "<group>"; };
+		8C891D52188A448C00939EC2 /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButton.h; sourceTree = "<group>"; };
+		8C891D53188A448C00939EC2 /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuButton.m; sourceTree = "<group>"; };
 		8CCCB4561879449400482A20 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8CCCB458187945A900482A20 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = "../ViewDeck-master/ViewDeck-master/ViewDeck/IIViewDeckController.h"; sourceTree = "<group>"; };
 		8CCCB459187945A900482A20 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = "../ViewDeck-master/ViewDeck-master/ViewDeck/IIViewDeckController.m"; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				8CCCB46218794D4C00482A20 /* MenuViewController.m */,
 				8C06AA3D187B67EE00B158CA /* PreparingMssterViewController.h */,
 				8C06AA3E187B67EE00B158CA /* PreparingMssterViewController.m */,
+				8C891D52188A448C00939EC2 /* MenuButton.h */,
+				8C891D53188A448C00939EC2 /* MenuButton.m */,
 			);
 			path = HatenaBookmarkReader;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 				8C22534918765737004B54B8 /* NSString+DDXML.m in Sources */,
 				8C05584B18701CDD00078B00 /* ArticleListCustomCell.m in Sources */,
 				8C22534818765737004B54B8 /* DDXMLElementAdditions.m in Sources */,
+				8C891D54188A448C00939EC2 /* MenuButton.m in Sources */,
 				8C22534A18765737004B54B8 /* DDXMLDocument.m in Sources */,
 				8CCCB45D187945A900482A20 /* IIWrapController.m in Sources */,
 				8C05581B186FF72300078B00 /* main.m in Sources */,
