@@ -13,5 +13,5 @@
 //- (void)finishLoading:(id)sender;
 //@end
 @interface MasterViewController : UITableViewController <HatenaBookmarkUtilDelegate>
-
+-(IBAction)showMenu;
 @end
