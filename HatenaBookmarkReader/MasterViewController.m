@@ -91,7 +91,7 @@
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *btn =
     [[UIBarButtonItem alloc]
-     initWithTitle:@"button"  // ボタンタイトル名を指定
+     initWithTitle:@"MENU"  // ボタンタイトル名を指定
      style:UIBarButtonItemStylePlain  // スタイルを指定（※下記表参照）
      target:self  // デリゲートのターゲットを指定
      action:@selector(showMenu)  // ボタンが押されたときに呼ばれるメソッドを指定
