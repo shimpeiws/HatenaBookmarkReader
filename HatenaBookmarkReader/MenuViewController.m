@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "IIViewDeckController.h"
 #import "MenuButton.h"
+#import "MasterViewController.h"
 
 @interface MenuViewController ()
 
@@ -72,12 +73,14 @@
 	NSLog(@"favoriteButtonTapped");
     [self.viewDeckController closeLeftViewBouncing:^(IIViewDeckController *controller) {
         if ([controller.centerController isKindOfClass:[UINavigationController class]]) {
-            UITableViewController* cc = (UITableViewController*)((UINavigationController*)controller.centerController).topViewController;
-            cc.navigationItem.title = @"favorite";
-            [cc.tableView reloadData];
+            MasterViewController* cc = (MasterViewController*)((UINavigationController*)controller.centerController).topViewController;
+//            UITableViewController* cc = (UITableViewController*)((UINavigationController*)controller.centerController).topViewController;
+            cc.navigationItem.title = @"お気に入り";
+//            [cc viewDidLoad];
             if ([cc respondsToSelector:@selector(tableView)]) {
                 [cc.tableView deselectRowAtIndexPath:[cc.tableView indexPathForSelectedRow] animated:NO];
             }
+            [cc getFavorieItems];
         }
 
     }];

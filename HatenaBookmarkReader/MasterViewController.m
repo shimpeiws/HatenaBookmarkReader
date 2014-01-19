@@ -37,6 +37,16 @@
     [self setupItems];
 }
 
+
+- (void)getFavorieItems
+{
+    NSLog(@"getFavorite");
+    HatenaBookmarkUtil* hatenaBookMarkUtil = [[HatenaBookmarkUtil alloc]init];
+    [hatenaBookMarkUtil setDelegate:self];
+    [hatenaBookMarkUtil favoriteEntries:@"shimpeiws"];
+
+}
+
 - (void)finishLoading:(NSArray*)entryList{
     NSLog(@"loaded");
     NSMutableDictionary *section = [NSMutableDictionary dictionary];
@@ -56,6 +66,11 @@
     tableDataList = @[section];
 
     [self.tableView reloadData];
+}
+
+- (void)favoriteSelected
+{
+    NSLog(@"delegated");
 }
 
 - (void)setupItems

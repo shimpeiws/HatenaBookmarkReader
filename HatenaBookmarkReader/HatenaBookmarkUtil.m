@@ -11,6 +11,7 @@
 #import "DDXMLDocument.h"
 
 static NSString * const HATENA_API_BASE_URL = @"http://b.hatena.ne.jp/entrylist/";
+static NSString * const HATENA_FAVORITE_API_BASE_URL = @"http://b.hatena.ne.jp/{user}/favorite.rss";
 
 @interface HatenaBookmarkUtil () {
 }
@@ -60,6 +61,13 @@ static NSString * const HATENA_API_BASE_URL = @"http://b.hatena.ne.jp/entrylist/
     }
     NSString *requestUrl =[NSString stringWithFormat:@"%@%@%@",HATENA_API_BASE_URL, categoryName, @"?sort=hot&threshold=&mode=rss"];
     [self recentyHotEntries:requestUrl];
+}
+
+-(void) favoriteEntries:(NSString *)userName
+{
+    NSString *requestUrl = [HATENA_FAVORITE_API_BASE_URL stringByReplacingOccurrencesOfString:@"{user}" withString:userName];
+    [self recentyHotEntries:requestUrl];
+    
 }
 
 -(void) recentyHotEntries:(NSString*) requestUrl

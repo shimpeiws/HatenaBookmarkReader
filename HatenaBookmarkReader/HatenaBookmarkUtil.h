@@ -30,6 +30,7 @@ typedef enum HatenaCategories : NSUInteger {
 @property (nonatomic, assign) HatenaCategories hatenaCategories;
 -(NSJSONSerialization*) getJsonResponse: (NSString*) requestUrl;
 -(void) entriesByCategory:(NSUInteger)category;
+-(void) favoriteEntries:(NSString*)userName;
 -(void) recentyHotEntries:(NSString*) requestUrl;
 
 @end
