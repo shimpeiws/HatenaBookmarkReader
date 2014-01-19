@@ -29,9 +29,11 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
+    
+    self.navigationItem.title = [_detailItem objectForKey:@"title"];
 
     if (self.detailItem) {
-        NSURL *url = [NSURL URLWithString:_detailItem];
+        NSURL *url = [NSURL URLWithString:[_detailItem objectForKey:@"url"]];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
         [_myWebView loadRequest:urlRequest];
     }

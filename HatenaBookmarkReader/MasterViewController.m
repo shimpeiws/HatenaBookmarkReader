@@ -241,8 +241,14 @@
         NSDictionary *theCell = theData[indexPath.row];
         
         NSString *url = theCell[@"url"];
+        NSString *title = theCell[@"title"];
         
-        [[segue destinationViewController] setDetailItem:url];
+        NSDictionary *param = @{
+                                @"url" : url,
+                                @"title" : title
+                                };
+        
+        [[segue destinationViewController] setDetailItem:param];
     }
 }
 
