@@ -222,6 +222,7 @@
 */
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _indexPath = indexPath;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.viewDeckController closeLeftViewBouncing:^(IIViewDeckController *controller) {
     }];
@@ -231,7 +232,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath *indexPath = _indexPath;
         
         NSDictionary *theSection = tableDataList[indexPath.section];
         
@@ -240,8 +241,14 @@
         NSDictionary *theCell = theData[indexPath.row];
         
         NSString *url = theCell[@"url"];
+        NSString *title = theCell[@"title"];
         
-        [[segue destinationViewController] setDetailItem:url];
+        NSDictionary *param = @{
+                                @"url" : url,
+                                @"title" : title
+                                };
+        
+        [[segue destinationViewController] setDetailItem:param];
     }
 }
 

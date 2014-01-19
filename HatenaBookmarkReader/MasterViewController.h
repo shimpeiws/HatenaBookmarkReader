@@ -10,6 +10,7 @@
 #import "HatenaBookmarkUtil.h"
 #import "MenuViewController.h"
 @interface MasterViewController : UITableViewController <HatenaBookmarkUtilDelegate>
+@property NSIndexPath *indexPath;
 -(IBAction)showMenu;
 -(void)getFavorieItems;
 -(void)getBookmarkedItems;
