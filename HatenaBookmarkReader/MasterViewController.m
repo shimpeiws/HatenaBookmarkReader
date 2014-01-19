@@ -47,6 +47,14 @@
 
 }
 
+- (void)getBookmarkedItems
+{
+    NSLog(@"getBookmarked");
+    HatenaBookmarkUtil* hatenaBookMarkUtil = [[HatenaBookmarkUtil alloc]init];
+    [hatenaBookMarkUtil setDelegate:self];
+    [hatenaBookMarkUtil bookmarkedEntries:@"shimpeiws"];
+}
+
 - (void)finishLoading:(NSArray*)entryList{
     NSLog(@"loaded");
     NSMutableDictionary *section = [NSMutableDictionary dictionary];
