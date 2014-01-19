@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol MenuViewDelegate <NSObject>
+- (void)favoriteSelected;
+@end
 @interface MenuViewController : UIViewController
 
 @end
