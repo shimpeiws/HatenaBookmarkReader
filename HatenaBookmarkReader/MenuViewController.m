@@ -10,6 +10,7 @@
 #import "IIViewDeckController.h"
 #import "MenuButton.h"
 #import "MasterViewController.h"
+#import "CategoryTableViewController.h"
 
 @interface MenuViewController ()
 
@@ -47,6 +48,7 @@
     MenuButton *bookMarkButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:2 labelString:@"ブックマーク"];
     [bookMarkButton addTarget:self action:@selector(bookMarkButtonSelected:)  forControlEvents:UIControlEventTouchUpInside];
     MenuButton *categoryButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:3 labelString:@"カテゴリー"];
+    [categoryButton addTarget:self action:@selector(categoryButtonSelected:)  forControlEvents:UIControlEventTouchUpInside];
     MenuButton *tagButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:4 labelString:@"タグ"];
     MenuButton *settingButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:5 labelString:@"設定"];
     
@@ -98,6 +100,31 @@
         }
         
     }];
+}
+
+-(void)categoryButtonSelected:(id)inSender {
+    
+    NSArray* subviews = self.view.subviews;
+    CategoryTableViewController *categoryTable = [[CategoryTableViewController alloc] init];
+    MenuButton *categoryButton = (MenuButton*)subviews[6];
+    categoryTable.tableView.frame = CGRectMake(0, categoryButton.frame.origin.y, 300, 300);
+    categoryTable.tableView.scrollEnabled = NO;
+    [self.view addSubview:categoryTable.tableView];
+    [self.view bringSubviewToFront:categoryTable.view];
+//    [self.view sendSubviewToBack:categoryTable.view];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+
+    
+    MenuButton *tagButton = (MenuButton*)subviews[6];
+    //tagButton.bounds = CGRectMake(0, 800, 0, 300);
+    tagButton.center = CGPointMake(0, 800);
+    MenuButton *settingButton = (MenuButton*)subviews[7];
+    //settingButton.bounds = CGRectMake(0, 1000, 0, 300);
+    settingButton.center = CGPointMake(0, 1000);
+    [UIView commitAnimations];
+
 }
 
 @end
