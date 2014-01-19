@@ -12,6 +12,7 @@
 
 static NSString * const HATENA_API_BASE_URL = @"http://b.hatena.ne.jp/entrylist/";
 static NSString * const HATENA_FAVORITE_API_BASE_URL = @"http://b.hatena.ne.jp/{user}/favorite.rss";
+static NSString * const HATENA_BOOKMARK_API_BASE_URL = @"http://b.hatena.ne.jp/{user}/rss";
 
 @interface HatenaBookmarkUtil () {
 }
@@ -68,6 +69,12 @@ static NSString * const HATENA_FAVORITE_API_BASE_URL = @"http://b.hatena.ne.jp/{
     NSString *requestUrl = [HATENA_FAVORITE_API_BASE_URL stringByReplacingOccurrencesOfString:@"{user}" withString:userName];
     [self recentyHotEntries:requestUrl];
     
+}
+
+-(void) bookmarkedEntries:(NSString *)userName
+{
+    NSString *requestUrl =[HATENA_BOOKMARK_API_BASE_URL stringByReplacingOccurrencesOfString:@"{user}" withString:userName];
+    [self recentyHotEntries:requestUrl];
 }
 
 -(void) recentyHotEntries:(NSString*) requestUrl

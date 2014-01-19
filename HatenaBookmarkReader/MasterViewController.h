@@ -12,4 +12,5 @@
 @interface MasterViewController : UITableViewController <HatenaBookmarkUtilDelegate>
 -(IBAction)showMenu;
 -(void)getFavorieItems;
+-(void)getBookmarkedItems;
 @end

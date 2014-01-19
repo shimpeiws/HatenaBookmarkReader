@@ -45,6 +45,7 @@
     [favoriteButton addTarget:self action:@selector(favoriteButtonSelected:)  forControlEvents:UIControlEventTouchUpInside];
     MenuButton *hotEntryButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:1 labelString:@"マイホットエントリー"];
     MenuButton *bookMarkButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:2 labelString:@"ブックマーク"];
+    [bookMarkButton addTarget:self action:@selector(bookMarkButtonSelected:)  forControlEvents:UIControlEventTouchUpInside];
     MenuButton *categoryButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:3 labelString:@"カテゴリー"];
     MenuButton *tagButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:4 labelString:@"タグ"];
     MenuButton *settingButton = [[MenuButton alloc]initWithFrame:CGRectMake(0, 0, 60, 30) columNum:5 labelString:@"設定"];
@@ -74,15 +75,28 @@
     [self.viewDeckController closeLeftViewBouncing:^(IIViewDeckController *controller) {
         if ([controller.centerController isKindOfClass:[UINavigationController class]]) {
             MasterViewController* cc = (MasterViewController*)((UINavigationController*)controller.centerController).topViewController;
-//            UITableViewController* cc = (UITableViewController*)((UINavigationController*)controller.centerController).topViewController;
             cc.navigationItem.title = @"お気に入り";
-//            [cc viewDidLoad];
             if ([cc respondsToSelector:@selector(tableView)]) {
                 [cc.tableView deselectRowAtIndexPath:[cc.tableView indexPathForSelectedRow] animated:NO];
             }
             [cc getFavorieItems];
         }
 
+    }];
+}
+
+-(void)bookMarkButtonSelected:(id)inSender {
+    NSLog(@"favoriteButtonTapped");
+    [self.viewDeckController closeLeftViewBouncing:^(IIViewDeckController *controller) {
+        if ([controller.centerController isKindOfClass:[UINavigationController class]]) {
+            MasterViewController* cc = (MasterViewController*)((UINavigationController*)controller.centerController).topViewController;
+            cc.navigationItem.title = @"ブックマーク";
+            if ([cc respondsToSelector:@selector(tableView)]) {
+                [cc.tableView deselectRowAtIndexPath:[cc.tableView indexPathForSelectedRow] animated:NO];
+            }
+            [cc getBookmarkedItems];
+        }
+        
     }];
 }
 
