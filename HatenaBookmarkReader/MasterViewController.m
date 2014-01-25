@@ -130,7 +130,7 @@
      ];
     self.navigationItem.leftBarButtonItem = btn;
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"MENU" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
-    self.navigationItem.title = @"IT";
+    self.navigationItem.title = @"テクノロジー";
     self.navigationItem.titleView.backgroundColor = [UIColor colorWithRed:0.30 green:0.70 blue:0.00 alpha:0.1];
 }
 - (IBAction)showMenu {
