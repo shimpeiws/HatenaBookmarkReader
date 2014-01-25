@@ -11,7 +11,6 @@
 // デリゲートを定義
 @protocol CategotyTableDelegate <NSObject>
 - (void) categotySelected: (NSInteger) selectedRow;
-- (void) testDelegate;
 @end
 
 @interface CategoryTableViewController : UITableViewController
