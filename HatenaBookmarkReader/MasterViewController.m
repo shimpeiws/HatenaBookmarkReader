@@ -55,6 +55,15 @@
     [hatenaBookMarkUtil bookmarkedEntries:@"shimpeiws"];
 }
 
+- (void)getCategoryItems:(NSUInteger)categoryId
+{
+    NSLog(@"getBookmarked");
+    HatenaBookmarkUtil* hatenaBookMarkUtil = [[HatenaBookmarkUtil alloc]init];
+    [hatenaBookMarkUtil setDelegate:self];
+    [hatenaBookMarkUtil entriesByCategory:categoryId];
+    
+}
+
 - (void)finishLoading:(NSArray*)entryList{
     NSLog(@"loaded");
     NSMutableDictionary *section = [NSMutableDictionary dictionary];

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CategoryTableViewController.h"
 @protocol MenuViewDelegate <NSObject>
 - (void)favoriteSelected;
 @end
-@interface MenuViewController : UIViewController
-
+@interface MenuViewController : UIViewController<CategotyTableDelegate>
 @end
