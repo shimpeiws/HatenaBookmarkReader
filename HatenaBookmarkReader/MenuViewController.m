@@ -13,6 +13,12 @@
 #import "CategoryTableViewController.h"
 
 @interface MenuViewController ()
+{
+    UIScrollView *scrollView;
+    UIView *subView;
+    CategoryTableViewController *categoryTable;
+    BOOL categoriesOpenFlag;
+}
 
 @end
 
@@ -29,10 +35,27 @@
 
 - (void)viewDidLoad
 {
+    
+    categoriesOpenFlag = FALSE;
+    categoryTable = [[CategoryTableViewController alloc]init];
+    categoryTable.delegate = self;
+    
     [super viewDidLoad];
+    scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    scrollView.scrollEnabled = YES;
+//    scrollView.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:scrollView];
+//    subView = [[UIView init] alloc];
+//    [scrollView addSubview:subView];
+    
 	// Do any additional setup after loading the view.
     [self setupNabigationBar];
     [self setupMenu];
+}
+
+-(void)viewDidLayoutSubviews {
+    [scrollView setContentSize: self.view.bounds.size];
+    [scrollView flashScrollIndicators];
 }
 
 - (void)setupNabigationBar
@@ -55,6 +78,7 @@
     NSMutableArray *buttons = [NSMutableArray arrayWithObjects:favoriteButton, hotEntryButton, bookMarkButton, categoryButton, tagButton, settingButton, nil];
     for (MenuButton *myButton in buttons) {
         [self.view addSubview:myButton];
+//        [scrollView addSubview:myButton];
     }
 }
 
@@ -102,29 +126,90 @@
     }];
 }
 
+- (void) categotySelected: (NSInteger) selectedRow {
+    NSLog(@"カテゴリーID %d tappped", selectedRow);
+    NSString *title = @"";
+    switch (selectedRow) {
+        case 0:
+            title = @"世の中";
+            break;
+        case 1:
+            title = @"政治と経済";
+            break;
+        case 2:
+            title = @"暮らし";
+            break;
+        case 3:
+            title = @"学び";
+            break;
+        case 4:
+            title = @"テクノロジー";
+            break;
+        case 5:
+            title = @"エンタメ";
+            break;
+        case 6:
+            title = @"アニメとゲーム";
+            break;
+        case 7:
+            title = @"おもしろ";
+            break;
+        case 8:
+            title = @"動画";
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self.viewDeckController closeLeftViewBouncing:^(IIViewDeckController *controller) {
+        if ([controller.centerController isKindOfClass:[UINavigationController class]]) {
+            MasterViewController* cc = (MasterViewController*)((UINavigationController*)controller.centerController).topViewController;
+            cc.navigationItem.title = title;
+            if ([cc respondsToSelector:@selector(tableView)]) {
+                [cc.tableView deselectRowAtIndexPath:[cc.tableView indexPathForSelectedRow] animated:NO];
+            }
+            [cc getCategoryItems:selectedRow];
+        }
+        
+    }];
+
+}
+
 -(void)categoryButtonSelected:(id)inSender {
     
-    NSArray* subviews = self.view.subviews;
-    CategoryTableViewController *categoryTable = [[CategoryTableViewController alloc] init];
-    MenuButton *categoryButton = (MenuButton*)subviews[6];
-    categoryTable.tableView.frame = CGRectMake(0, categoryButton.frame.origin.y, 300, 300);
-    categoryTable.tableView.scrollEnabled = NO;
-    [self.view addSubview:categoryTable.tableView];
-    [self.view bringSubviewToFront:categoryTable.view];
-//    [self.view sendSubviewToBack:categoryTable.view];
     
+    NSArray* subviews = self.view.subviews;
+    MenuButton *categoryButton = (MenuButton*)subviews[6];
+    
+    if (categoriesOpenFlag) {
+        [subviews[9] removeFromSuperview];
+        
+    } else {
+        categoryTable.tableView.frame = CGRectMake(0, categoryButton.frame.origin.y + 50, 300, 300);
+        categoryTable.tableView.scrollEnabled = NO;
+        [self.view addSubview:categoryTable.tableView];
+        [self.view bringSubviewToFront:categoryTable.view];
+    }
+    [self animateButton];
+    categoriesOpenFlag = !categoriesOpenFlag;
+}
+
+-(void) animateButton
+{
+    NSArray* subviews = self.view.subviews;
+    MenuButton *tagButton = (MenuButton*)subviews[7];
+    MenuButton *settingButton = (MenuButton*)subviews[8];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];
-
-    
-    MenuButton *tagButton = (MenuButton*)subviews[6];
-    //tagButton.bounds = CGRectMake(0, 800, 0, 300);
-    tagButton.center = CGPointMake(0, 800);
-    MenuButton *settingButton = (MenuButton*)subviews[7];
-    //settingButton.bounds = CGRectMake(0, 1000, 0, 300);
-    settingButton.center = CGPointMake(0, 1000);
+    if(categoriesOpenFlag) {
+        tagButton.center = CGPointMake(20, 370);
+        settingButton.center = CGPointMake(20, 435);
+    } else {
+        tagButton.center = CGPointMake(20, 800);
+        settingButton.center = CGPointMake(20, 1000);
+    }
     [UIView commitAnimations];
-
 }
 
 @end

@@ -14,4 +14,5 @@
 -(IBAction)showMenu;
 -(void)getFavorieItems;
 -(void)getBookmarkedItems;
+-(void)getCategoryItems:(NSUInteger)categoryId;
 @end

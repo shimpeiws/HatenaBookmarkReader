@@ -107,8 +107,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"「%@」が選択されました", [_objects objectAtIndex:indexPath.row]);
-    NSLog(@"選択されました");
+    NSLog(@"「%@」が選択されました", [_objects objectAtIndex:indexPath.row]);
+    [self.delegate categotySelected:(NSInteger)indexPath.row];
 }
 
 /*
