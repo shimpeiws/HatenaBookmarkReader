@@ -15,7 +15,7 @@
 @interface MenuViewController ()
 {
     UIScrollView *scrollView;
-    UIView *subView;
+    UIViewController *subView;
     CategoryTableViewController *categoryTable;
     BOOL categoriesOpenFlag;
 }
@@ -41,16 +41,28 @@
     categoryTable.delegate = self;
     
     [super viewDidLoad];
-    scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    CGRect rect = CGRectMake(0, 0, 500, 3000);
+    subView = [[UIViewController alloc]init];
+    self.view.frame = rect;
+    subView.view.frame = rect;
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 500)];
+//    scrollView = [[UIScrollView alloc]initWithFrame:subView.view.bounds];
     scrollView.scrollEnabled = YES;
+//    [scrollView setContentSize:subView.view.frame.size];
 //    scrollView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:scrollView];
+//    [self.view addSubview:scrollView];
+//    [self.view  addSubview:subView.view];
 //    subView = [[UIView init] alloc];
 //    [scrollView addSubview:subView];
     
 	// Do any additional setup after loading the view.
     [self setupNabigationBar];
     [self setupMenu];
+    [scrollView setContentSize:CGSizeMake(320.0, 3000.0)];
+    [scrollView addSubview:subView.view];
+    [self.view addSubview:scrollView];
+    [scrollView addSubview:subView.view];
+//    self.view = scrollView;
 }
 
 -(void)viewDidLayoutSubviews {
@@ -77,8 +89,8 @@
     
     NSMutableArray *buttons = [NSMutableArray arrayWithObjects:favoriteButton, hotEntryButton, bookMarkButton, categoryButton, tagButton, settingButton, nil];
     for (MenuButton *myButton in buttons) {
-        [self.view addSubview:myButton];
-//        [scrollView addSubview:myButton];
+//        [self.view addSubview:myButton];
+        [subView.view addSubview:myButton];
     }
 }
 
@@ -179,17 +191,20 @@
 -(void)categoryButtonSelected:(id)inSender {
     
     
-    NSArray* subviews = self.view.subviews;
-    MenuButton *categoryButton = (MenuButton*)subviews[6];
+//    NSArray* subviews = self.view.subviews;
+    NSArray* subviews = subView.view.subviews;
+    MenuButton *categoryButton = (MenuButton*)subviews[3];
     
     if (categoriesOpenFlag) {
-        [subviews[9] removeFromSuperview];
+        [subviews[6] removeFromSuperview];
         
     } else {
         categoryTable.tableView.frame = CGRectMake(0, categoryButton.frame.origin.y + 50, 300, 300);
         categoryTable.tableView.scrollEnabled = NO;
-        [self.view addSubview:categoryTable.tableView];
-        [self.view bringSubviewToFront:categoryTable.view];
+//        [self.view addSubview:categoryTable.tableView];
+//        [self.view bringSubviewToFront:categoryTable.view];
+        [subView.view addSubview:categoryTable.tableView];
+        [subView.view bringSubviewToFront:categoryTable.view];
     }
     [self animateButton];
     categoriesOpenFlag = !categoriesOpenFlag;
@@ -197,9 +212,9 @@
 
 -(void) animateButton
 {
-    NSArray* subviews = self.view.subviews;
-    MenuButton *tagButton = (MenuButton*)subviews[7];
-    MenuButton *settingButton = (MenuButton*)subviews[8];
+    NSArray* subviews = subView.view.subviews;
+    MenuButton *tagButton = (MenuButton*)subviews[4];
+    MenuButton *settingButton = (MenuButton*)subviews[5];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];
     if(categoriesOpenFlag) {
