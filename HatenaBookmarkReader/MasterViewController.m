@@ -177,8 +177,17 @@
     }
     NSDictionary *myData = theData[indexPath.row];
     
+    // ファビコン画像のキャッシュ
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main = dispatch_get_main_queue();
+    cell.favicon.image = nil;
+    dispatch_async(q_global, ^{
+        UIImage *favicon_image = [self faviconImageFromUrl:myData[@"url"]];
+        dispatch_async(q_main, ^{
+            cell.favicon.image = favicon_image;
+        });
+    });
     
-    cell.favicon.image = [self faviconImageFromUrl:myData[@"url"]];
     [cell.users setText:myData[@"usersCount"]];
     [cell.date setText:myData[@"postDate"]];
     NSString *tagFirst = myData[@"tags"][0];
