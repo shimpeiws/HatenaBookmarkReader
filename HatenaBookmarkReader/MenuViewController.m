@@ -118,6 +118,7 @@
                 [cc.tableView deselectRowAtIndexPath:[cc.tableView indexPathForSelectedRow] animated:NO];
             }
             [cc getFavorieItems];
+            [self scrollToTop:cc];
         }
 
     }];
@@ -133,9 +134,16 @@
                 [cc.tableView deselectRowAtIndexPath:[cc.tableView indexPathForSelectedRow] animated:NO];
             }
             [cc getBookmarkedItems];
+            [self scrollToTop:cc];
         }
         
     }];
+}
+
+- (void) scrollToTop: (MasterViewController*) cc
+{
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [cc.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (void) categotySelected: (NSInteger) selectedRow {
@@ -182,6 +190,7 @@
                 [cc.tableView deselectRowAtIndexPath:[cc.tableView indexPathForSelectedRow] animated:NO];
             }
             [cc getCategoryItems:selectedRow];
+            [self scrollToTop:cc];
         }
         
     }];
