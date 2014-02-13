@@ -19,6 +19,7 @@
     CategoryTableViewController *categoryTable;
     BOOL categoriesOpenFlag;
 }
+@property (strong, nonatomic) IBOutlet UIScrollView *scroller;
 
 @end
 
@@ -41,11 +42,11 @@
     categoryTable.delegate = self;
     
     [super viewDidLoad];
-    CGRect rect = CGRectMake(0, 0, 500, 3000);
+    CGRect rect = CGRectMake(0, 0, 320, 3000);
     subView = [[UIViewController alloc]init];
     self.view.frame = rect;
     subView.view.frame = rect;
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 500)];
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 550)];
 //    scrollView = [[UIScrollView alloc]initWithFrame:subView.view.bounds];
     scrollView.scrollEnabled = YES;
 //    [scrollView setContentSize:subView.view.frame.size];
@@ -55,18 +56,27 @@
 //    subView = [[UIView init] alloc];
 //    [scrollView addSubview:subView];
     
+    
 	// Do any additional setup after loading the view.
     [self setupNabigationBar];
     [self setupMenu];
-    [scrollView setContentSize:CGSizeMake(320.0, 3000.0)];
-    [scrollView addSubview:subView.view];
-    [self.view addSubview:scrollView];
-    [scrollView addSubview:subView.view];
+    
+//    [scrollView setContentSize:CGSizeMake(320.0, 1000.0)];
+    self.scroller.contentSize = CGSizeMake(320, 500);
+    [self.scroller addSubview:subView.view];
+
+    
+    
+//    [scrollView setContentSize:subView.view.frame.size];
+//    [scrollView addSubview:subView.view];
+//    [self.view addSubview:scrollView];
+//    [scrollView addSubview:subView.view];
 //    self.view = scrollView;
 }
 
 -(void)viewDidLayoutSubviews {
-    [scrollView setContentSize: self.view.bounds.size];
+//    [scrollView setContentSize: self.view.bounds.size];
+    [self.scroller setContentSize: CGSizeMake(320, 1000)];
     [scrollView flashScrollIndicators];
 }
 
@@ -230,8 +240,8 @@
         tagButton.center = CGPointMake(20, 370);
         settingButton.center = CGPointMake(20, 435);
     } else {
-        tagButton.center = CGPointMake(20, 800);
-        settingButton.center = CGPointMake(20, 1000);
+        tagButton.center = CGPointMake(20, 675);
+        settingButton.center = CGPointMake(20, 750);
     }
     [UIView commitAnimations];
 }
